@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div class="container">
+        <h1>All Companies</h1>
+        {% for company in companies %}
+        <div class="company">
+            {% if company.logo %}
+                <img src="{{ company.logo.url }}" alt="{{ company.name }} logo">
+            {% else %}
+                <img src="https://via.placeholder.com/80" alt="No logo">
+            {% endif %}
+            <div class="company-details">
+                <h2>{{ company.name }}</h2>
+                <p>{{ company.description }}</p>
+            </div>
+        </div>
+        {% empty %}
+            <p>No companies found.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

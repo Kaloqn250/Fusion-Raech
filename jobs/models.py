@@ -1,5 +1,7 @@
 from django.db import models
 
+from companies.models import Company
+
 
 # Create your models here.
 class Job(models.Model):
@@ -43,7 +45,6 @@ class Job(models.Model):
     weekly_hours = models.PositiveIntegerField(null=True, blank=True)
     remote_option = models.CharField(max_length=20, default='on-site')
 
-
     experience_level = models.CharField(
         max_length=2,
         choices=EXPERIENCE_LEVEL_CHOICES
@@ -56,6 +57,8 @@ class Job(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='jobs')
 
     def __str__(self):
         return self.title
