@@ -1,186 +1,205 @@
-/* Reset some default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        /* Navbar styling */
-        nav ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-        }
-
-        /* Remove color from li, style links instead */
-        nav ul li {
-        cursor: pointer;
-        }
-
-        /* Style the links directly */
-        nav ul li a {
-        color: white;           /* navbar text color */
-        text-decoration: none;  /* remove underline */
-        font-weight: 500;
-        transition: color 0.3s;
-        padding: 5px 10px;      /* optional spacing for hover effect */
-        }
-
-        nav ul li a:hover {
-        color: #ffd700;         /* gold hover like before */
+html {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+  color: #000000;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding-top: 100px; /* >= височината на header */
 }
 
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(to right, #1a73e8, #4fc3f7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
+/* Header контейнер */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Left | Center | Right */
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0a0a0a; /* промени според дизайна */
+  z-index: 999;
+}
 
-        .hero p {
-            font-size: 1.5rem;
-        }
+/* Лого и име */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
+.logo {
+  width: 40px;
+  height: auto;
+}
 
-            .hero h1 {
-                font-size: 3rem;
-            }
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
 
-            .hero p {
-                font-size: 1.2rem;
-            }
-        }
+/* Навигация */
+.header-center .nav {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* ===== Companies Page Styles ===== */
+.header-center .nav li a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-center .nav li a:hover {
+  color: #00ffff; /* неонов ефект на hover */
+}
+
+/* Header Right - двата бутона */
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #2200ff, #1a1a2e);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-in-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Free Trial Button */
+.cta-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #2200ff, #1a1a2e);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #00bfbf;
+}
+h1{
+    color: #ffffff;
+    font-weight: 1000;
+    font-size: 33.3px;
+    text-align: center;
+}
+p{
+    color: gray;
+    text-align: center;
+    margin: 55px;
+}.btn-container {
+  text-align: center; /* хоризонтално центриране */
+  margin-top: 50px;   /* разстояние от header */
+}
+
+.sft-btn{
+  background: linear-gradient(135deg, #2200ff, #1a1a2e);
+  color: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 12px 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 6px;
+}
+/* 🔹 Само тази секция контролира картите */
+.expanding-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 0 20px;
+  display: flex;
+  width: 70vw;
 }
 
-.container h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-    color: #1a73e8; /* match homepage primary color */
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
 }
 
-.company {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
 }
 
-.company:hover {
-    transform: scale(1.02);
+.panel.active {
+  flex: 5;
 }
 
-.company img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-right: 20px;
-    border-radius: 8px;
-    background-color: #f0f0f0;
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+/* Mobile app*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel {
+    height: 40vh;
+    margin: 5px;
+  }
+
+  .panel.active {
+    flex: 3;
+  }
+}
+h3{
+  background: linear-gradient(135deg, #2200ff, #1a1a2e);
+  color: #ffffff;
+  border: 1px solid black;
+}
+body * {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.4s ease, opacity 0.6s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.company-details h2 {
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-}
 
-.company-details p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .company {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .company img {
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
-}
-
-
-.form-container {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-}
-
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-form button{
-    font-size: 1.4em;
-
-}

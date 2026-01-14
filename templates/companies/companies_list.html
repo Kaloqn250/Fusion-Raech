@@ -1,22 +1,33 @@
 {% extends 'common/base.html' %}
 
 {% block content %}
-<div class="container">
-        <h1>All Companies</h1>
+<h1 class="show">Companies Hiring on Fusion Reach</h1>
+<p class="show">Discover brands actively looking for freelancers</p>
+
+<!-- ================= COMPANIES LIST ================= -->
+<section class="companies-section show">
+    <div class="companies-container">
+
         {% for company in companies %}
-        <div class="company">
+        <a href="{% url 'company_detail' company.id %}" class="company-row">
+            
             {% if company.logo %}
-                <img src="{{ company.logo.url }}" alt="{{ company.name }} logo">
+                <img src="{{ company.logo.url }}" alt="{{ company.name }}">
             {% else %}
-                <img src="https://via.placeholder.com/80" alt="No logo">
+                <div class="company-placeholder">FR</div>
             {% endif %}
-            <div class="company-details">
-                <h2>{{ company.name }}</h2>
-                <p>{{ company.description }}</p>
+
+            <div class="company-info">
+                <h3>{{ company.name }}</h3>
+                <p>{{ company.description|truncatewords:20 }}</p>
             </div>
-        </div>
+
+        </a>
         {% empty %}
-            <p>No companies found.</p>
+        <p>No companies available yet.</p>
         {% endfor %}
+
     </div>
+</section>
+
 {% endblock %}

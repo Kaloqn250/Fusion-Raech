@@ -1,10 +1,44 @@
 {% extends 'common/base.html' %}
+{% load static %}
 {% block content %}
 
     
-    <section class="hero">
-        <h1>Welcome to Fusion Reach</h1>
-        <p>Connecting freelancers to amazing opportunities with top brands.</p>
+    <h1>
+        Automate Your Lead Generation & Client Outreach
+    </h1>
+    <p>
+     Fusion Reach automates the entire process — from discovering business leads and sending personalized emails to managing client relationships.<br>
+     All of it — in one intelligent system. Fusion Reach transforms the way you connect with potential clients — by automating lead discovery,
+     crafting personalized outreach messages, and managing every interaction from a single intelligent dashboard. No more manual prospecting or lost opportunities — just a smooth,
+     AI-driven process that turns cold contacts into meaningful business relationships. Stop wasting hours searching for leads or sending generic emails. Fusion Reach finds verified business contacts,
+     creates tailored outreach campaigns, tracks every response in a unified CRM, and continuously learns from results — so each campaign gets smarter, faster, and more effective over time.
+    </p>
+    <div class="btn-container">
+     <button class="sft-btn">Start Free Trial</button>
+    </div>
+    <section class="expanding-section">
+    <div class="container">
+      <div class="panel active" style="background-image: url('{% static 'images/Automations.jpg' %}');">
+        <h3>Automations</h3>
+      </div>
+
+      <div class="panel" style="background-image: url('{% static 'images/Lead_Generation.jpg' %}');">
+        <h3>Lead Generation</h3>
+      </div>
+
+      <div class="panel" style="background-image: url('{% static 'images/Outreach.jpg' %}');">
+        <h3>Outreach</h3>
+      </div>
+
+      <div class="panel" style="background-image: url('{% static 'images/Analystics.jpg' %}');">
+        <h3>Analytics</h3>
+      </div>
+
+      <div class="panel" style="background-image: {% static 'images/CRM.jpg' %};">
+        <h3>Customer Relationship Management(CRM)</h3>
+      </div>
+    </div>
+    <script src={% static 'script/script.js' %}></script>
     </section>
 
 {% endblock %}
